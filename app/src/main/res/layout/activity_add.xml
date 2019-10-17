@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeActivity">
-
+    tools:context=".AddActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +28,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         >
 
@@ -37,44 +36,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Hôm nay bạn cảm thấy như thế nào?"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Chào mừng bạn đến với My Diary"
             android:textStyle="bold"
+            android:textColor="#00f"
             />
-        <Button
-            android:id="@+id/btn_add"
+
+        <EditText
+            android:id="@+id/edit_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Tiêu đề" />
+
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:hint="Viết suy nghĩ của bạn..."
+            android:inputType="text|textMultiLine"
+            android:gravity="top"/>
+        <Button
+            android:id="@+id/btn_add_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD"
             android:gravity="center"
-            android:text="Thêm"
-            android:textStyle="bold"
             />
 
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-
-        <Button
-            android:id="@+id/save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="show các list add ở đây"
-            android:textStyle="bold"
-            />
-
-
-
-    </LinearLayout>
-
-
-
-
-
 
 </LinearLayout>

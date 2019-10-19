@@ -59,13 +59,10 @@
         >
 
 
-        <Button
-            android:id="@+id/save"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="show các list add ở đây"
-            android:textStyle="bold"
             />
 
 

@@ -36,19 +36,35 @@ public class AddActivity extends AppCompatActivity {
         btn_add_backSreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showBackScreenHome();
+                add();
                 finish();
             }
         });
     }
-    public void showBackScreenHome(){
+    public void add(){
         final String title = editTitle.getText().toString();
         final  String content = editContent.getText().toString();
 
         if (title.isEmpty()){
-            Toast.makeText(this, "Tiêu đề không để trống", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Tiêu đề không được để trống", Toast.LENGTH_SHORT).show();
             return;
         }
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                Diary diary = new Diary(title, content);
+                db.diaryDao().insertAll(diary);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                Toast.makeText(AddActivity.this, "Đã thêm", Toast.LENGTH_SHORT).show();
+            }
+        }.execute();
+
+
         Intent intent = new Intent(AddActivity.this, HomeActivity.class);
         startActivity(intent);
     }

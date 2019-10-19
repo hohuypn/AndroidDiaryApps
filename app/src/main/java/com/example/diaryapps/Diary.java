@@ -12,14 +12,12 @@ public class Diary  {
 
     public String title;
     public String content;
-    public String date;
 
 
-    public Diary(int id, String title, String content, String date) {
-        this.id = id;
+    public Diary( String title, String content) {
+
         this.title = title;
         this.content = content;
-        this.date = date;
     }
 
     public int getId() {
@@ -46,11 +44,4 @@ public class Diary  {
         this.content = content;
     }
 
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
 }
